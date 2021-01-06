@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductService", "ProductSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService.Api", "ProductService.Api\ProductService.Api.csproj", "{289FCF0C-87B6-4CA0-B6AA-F7148BCA24BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricingService", "PricingService\PricingService.csproj", "{1F32E330-BE1C-488C-A203-081FCABA8B1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricingService.Api", "PricingService.Api\PricingService.Api.csproj", "{D0056AC9-679A-425F-8606-0C10DEE49DD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{289FCF0C-87B6-4CA0-B6AA-F7148BCA24BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{289FCF0C-87B6-4CA0-B6AA-F7148BCA24BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{289FCF0C-87B6-4CA0-B6AA-F7148BCA24BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F32E330-BE1C-488C-A203-081FCABA8B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F32E330-BE1C-488C-A203-081FCABA8B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F32E330-BE1C-488C-A203-081FCABA8B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F32E330-BE1C-488C-A203-081FCABA8B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0056AC9-679A-425F-8606-0C10DEE49DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0056AC9-679A-425F-8606-0C10DEE49DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0056AC9-679A-425F-8606-0C10DEE49DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0056AC9-679A-425F-8606-0C10DEE49DD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
