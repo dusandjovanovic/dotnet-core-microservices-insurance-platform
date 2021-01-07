@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricingService.Api", "Prici
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "AuthService\AuthService.csproj", "{D92F65B0-6771-4CEE-9234-65E6404A15C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardService", "DashboardService\DashboardService.csproj", "{232F66E5-71FB-4F7B-9642-E10C0C6A2DB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardService.Api", "DashboardService.Api\DashboardService.Api.csproj", "{50E12867-760B-450D-BBFA-93D5092AFC7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{D92F65B0-6771-4CEE-9234-65E6404A15C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D92F65B0-6771-4CEE-9234-65E6404A15C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D92F65B0-6771-4CEE-9234-65E6404A15C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232F66E5-71FB-4F7B-9642-E10C0C6A2DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232F66E5-71FB-4F7B-9642-E10C0C6A2DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232F66E5-71FB-4F7B-9642-E10C0C6A2DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232F66E5-71FB-4F7B-9642-E10C0C6A2DB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E12867-760B-450D-BBFA-93D5092AFC7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E12867-760B-450D-BBFA-93D5092AFC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E12867-760B-450D-BBFA-93D5092AFC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E12867-760B-450D-BBFA-93D5092AFC7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
