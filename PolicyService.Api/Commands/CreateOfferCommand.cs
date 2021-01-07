@@ -5,7 +5,7 @@ using PolicyService.Api.Commands.Dtos;
 
 namespace PolicyService.Api.Commands
 {
-    public class CreateOfferCommand : IRequest<CreatePolicyResult>
+    public class CreateOfferCommand : IRequest<CreateOfferResult>
     {
         public string ProductCode { get; set; }
         
@@ -22,14 +22,14 @@ namespace PolicyService.Api.Commands
     {
         public string AgentLogin { get; set; }
 
-        public CreateOfferByAgentCommand(string agentLogin, CreateOfferCommand command)
+        public CreateOfferByAgentCommand(string agentLogin, CreateOfferCommand baseCmd)
         {
             AgentLogin = agentLogin;
-            ProductCode = command.ProductCode;
-            PolicyFrom = command.PolicyFrom;
-            PolicyTo = command.PolicyTo;
-            SelectedCovers = command.SelectedCovers;
-            Answers = command.Answers;
+            ProductCode = baseCmd.ProductCode;
+            PolicyFrom = baseCmd.PolicyFrom;
+            PolicyTo = baseCmd.PolicyTo;
+            SelectedCovers = baseCmd.SelectedCovers;
+            Answers = baseCmd.Answers;
         }
     }
 }

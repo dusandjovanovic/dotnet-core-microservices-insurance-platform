@@ -2,7 +2,7 @@ using PolicyService.Api.Queries.Dtos;
 
 namespace PolicyService.Api.Queries
 {
-    public class GetPolicyDetailsResult
+    public class GetPolicyDetailsQueryResult
     {
         public PolicyDetailsDto Policy { get; set; }
     }

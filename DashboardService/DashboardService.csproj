@@ -5,13 +5,27 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers" />
-      <Folder Include="DataAccess" />
-      <Folder Include="Domain" />
-      <Folder Include="Init" />
-      <Folder Include="Listeners" />
-      <Folder Include="Messaging" />
-      <Folder Include="Queries" />
+        <Content Update="hosting.json">
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DashboardService.Api\DashboardService.Api.csproj" />
+      <ProjectReference Include="..\PolicyService.Api\PolicyService.Api.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="5.1.0" />
+      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="5.1.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.1" />
+      <PackageReference Include="NEST" Version="6.8.6" />
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+      <PackageReference Include="RawRabbit.DependencyInjection.ServiceCollection" Version="2.0.0-rc5" />
+      <PackageReference Include="RawRabbit.Operations.Subscribe" Version="2.0.0-rc5" />
+      <PackageReference Include="Steeltoe.Discovery.ClientCore" Version="3.0.2" />
     </ItemGroup>
 
 </Project>

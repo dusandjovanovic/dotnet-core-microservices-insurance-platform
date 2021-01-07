@@ -77,9 +77,13 @@ namespace AuthService
             }
 
             applicationBuilder.UseCors("CorsPolicy");
+            
             applicationBuilder.UseAuthentication();
+            
             applicationBuilder.UseAuthorization();
+            
             applicationBuilder.UseHttpsRedirection();
+            
             applicationBuilder.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }

@@ -8,7 +8,7 @@ namespace DashboardService.Api.Queries.Dtos
 
         public SalesDto() { }
 
-        public SalesDto(long policiesCount, long premiumAmount)
+        public SalesDto(long policiesCount, decimal premiumAmount)
         {
             PoliciesCount = policiesCount;
             PremiumAmount = premiumAmount;

@@ -1,37 +1,51 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PolicyService.DataAccess.NHibernate;
+using PolicyService.Messaging.RabbitMq;
+using PolicyService.RestClients;
+using Steeltoe.Discovery.Client;
 
 namespace PolicyService
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        public Startup(IConfiguration configuration)
         {
+            Configuration = configuration;
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public IConfiguration Configuration { get; }
+        
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDiscoveryClient(Configuration);
+            services.AddMvc()
+                .AddNewtonsoftJson()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddMediatR();
+            services.AddPricingRestClient();
+            services.AddNHibernate(Configuration.GetConnectionString("DefaultConnection"));
+            services.AddRabbit();
+        }
+        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            app.UseExceptionHandler("/error");
+            
+            if (!env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseHsts();
             }
 
             app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context => { await context.Response.WriteAsync("Hello World!"); });
-            });
+            app.UseHttpsRedirection();
+            app.UseDiscoveryClient();
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
 }

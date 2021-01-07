@@ -3,7 +3,7 @@ using MediatR;
 
 namespace DashboardService.Api.Queries
 {
-    public class GetAgentSalesQuery : IRequest<GetAgentSalesResult>
+    public class GetAgentsSalesQuery : IRequest<GetAgentsSalesResult>
     {
         public string AgentLogin { get; set; }
         
