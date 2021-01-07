@@ -4,4 +4,14 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Controllers" />
+      <Folder Include="DataAccess" />
+      <Folder Include="Domain" />
+      <Folder Include="Init" />
+      <Folder Include="Listeners" />
+      <Folder Include="Messaging" />
+      <Folder Include="Queries" />
+    </ItemGroup>
+
 </Project>
