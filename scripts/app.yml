@@ -1,12 +1,12 @@
 ﻿version: '3'
 
 services:
-  dotnet-agent-portal-gateway:
+  dotnet-gateway:
     build:
       context: ../
       dockerfile: ApiGateway/Dockerfile
-    image: dotnet-agent-portal-gateway
-    container_name: dotnet-agent-portal-gateway
+    image: dotnet-gateway
+    container_name: dotnet-gateway
     network_mode: host
 
   dotnet-auth-service:

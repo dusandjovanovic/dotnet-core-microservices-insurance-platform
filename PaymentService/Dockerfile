@@ -1,25 +1,25 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-#Depending on the operating system of the host machines(s) that will build or run the containers, the image specified in the FROM statement may need to be changed.
-#For more information, please see https://aka.ms/containercompat
-
-FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
-
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
-WORKDIR /src
-COPY ["PaymentService/PaymentService.csproj", "PaymentService/"]
-RUN dotnet restore "PaymentService/PaymentService.csproj"
-COPY . .
-WORKDIR "/src/PaymentService"
-RUN dotnet build "PaymentService.csproj" -c Release -o /app/build
+
+ENV APP_HOME /opt/app
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
+
+COPY PolicyService.Api/*.csproj $APP_HOME/PolicyService.Api/
+COPY PaymentService.Api/*.csproj $APP_HOME/PaymentService.Api/
+COPY PaymentService/*.csproj $APP_HOME/PaymentService/
+RUN  cd $APP_HOME/PaymentService && dotnet restore
+
+COPY PolicyService.Api $APP_HOME/PolicyService.Api/
+COPY PaymentService.Api $APP_HOME/PaymentService.Api/
+COPY PaymentService $APP_HOME/PaymentService/
+RUN cd $APP_HOME/PaymentService && dotnet build
 
 FROM build AS publish
-RUN dotnet publish "PaymentService.csproj" -c Release -o /app/publish
+WORKDIR $APP_HOME/PaymentService
+RUN dotnet publish -c Release -o out
 
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+ENV ASPNETCORE_URLS=http://+:5070
+COPY --from=publish /opt/app/PaymentService/out ./
 ENTRYPOINT ["dotnet", "PaymentService.dll"]

@@ -12,7 +12,7 @@ using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Provider.Eureka;
 
-namespace AgentPortalApiGateway
+namespace ApiGateway
 {
     public class Program
     {

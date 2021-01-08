@@ -1,25 +1,27 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-#Depending on the operating system of the host machines(s) that will build or run the containers, the image specified in the FROM statement may need to be changed.
-#For more information, please see https://aka.ms/containercompat
-
-FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
-
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
-WORKDIR /src
-COPY ["PricingService/PricingService.csproj", "PricingService/"]
-RUN dotnet restore "PricingService/PricingService.csproj"
-COPY . .
-WORKDIR "/src/PricingService"
-RUN dotnet build "PricingService.csproj" -c Release -o /app/build
+
+ENV APP_HOME /opt/app
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
+
+COPY PricingService.Api/*.csproj $APP_HOME/PricingService.Api/
+COPY PricingService/*.csproj $APP_HOME/PricingService/
+RUN cd $APP_HOME/PricingService && dotnet restore
+
+COPY PricingService.Api $APP_HOME/PricingService.Api/
+COPY PricingService $APP_HOME/PricingService/
+RUN cd $APP_HOME/PricingService && dotnet build
+
+FROM build AS test
+WORKDIR $APP_HOME/PricingService.Test
+RUN dotnet test --verbosity:normal
 
 FROM build AS publish
-RUN dotnet publish "PricingService.csproj" -c Release -o /app/publish
+WORKDIR $APP_HOME/PricingService
+RUN dotnet publish -c Release -o out
 
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+ENV ASPNETCORE_URLS=http://+:5040
+COPY --from=publish /opt/app/PricingService/out ./
 ENTRYPOINT ["dotnet", "PricingService.dll"]
