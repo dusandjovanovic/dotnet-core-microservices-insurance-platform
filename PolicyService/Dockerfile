@@ -7,7 +7,7 @@ WORKDIR $APP_HOME
 COPY PricingService.Api/*.csproj $APP_HOME/PricingService.Api/
 COPY PolicyService.Api/*.csproj $APP_HOME/PolicyService.Api/
 COPY PolicyService/*.csproj $APP_HOME/PolicyService/
-RUN cd $APP_HOME/PolicyService && dotnet restore
+RUN cd $APP_HOME/PolicyService && dotnet restore --disable-parallel
 
 COPY PricingService.Api $APP_HOME/PricingService.Api/
 COPY PolicyService.Api $APP_HOME/PolicyService.Api/

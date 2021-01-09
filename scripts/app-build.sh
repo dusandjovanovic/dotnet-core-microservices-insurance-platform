@@ -1,1 +1,1 @@
-﻿docker-compose -f app.yml build
+docker-compose -f app.yml build

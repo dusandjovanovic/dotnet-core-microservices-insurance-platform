@@ -7,7 +7,7 @@ WORKDIR $APP_HOME
 COPY PolicyService.Api/*.csproj $APP_HOME/PolicyService.Api/
 COPY PaymentService.Api/*.csproj $APP_HOME/PaymentService.Api/
 COPY PaymentService/*.csproj $APP_HOME/PaymentService/
-RUN  cd $APP_HOME/PaymentService && dotnet restore
+RUN  cd $APP_HOME/PaymentService && dotnet restore --disable-parallel
 
 COPY PolicyService.Api $APP_HOME/PolicyService.Api/
 COPY PaymentService.Api $APP_HOME/PaymentService.Api/

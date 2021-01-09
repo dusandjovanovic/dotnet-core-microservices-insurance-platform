@@ -1,12 +1,11 @@
-﻿using MediatR;
-using ProductService.Api.Commands;
-using ProductService.Api.Commands.Dtos;
-using ProductService.Domain;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using MediatR;
+using ProductService.Api.Commands;
+using ProductService.Api.Commands.Dtos;
+using ProductService.Domain;
 
 namespace ProductService.Commands
 {
@@ -50,10 +49,10 @@ namespace ProductService.Commands
                             dateQuestion.Text));
                         break;
                     case ChoiceQuestionDto choiceQuestion:
-                        questions.Add(new ChoiceQuestion(choiceQuestion.QuestionCode, choiceQuestion.Index,
-                            choiceQuestion.Text, choiceQuestion.Choices.Select(c => new Choice(c.Code, c.Label)).ToList()));
+                        questions.Add(new ChoiceQuestion(choiceQuestion.QuestionCode, choiceQuestion.Index, 
+                            choiceQuestion.Text, choiceQuestion.Choices.Select(c=>new Choice(c.Code,c.Label)).ToList()));
                         break;
-                }
+                }    
             }
             draft.AddQuestions(questions);
 

@@ -11,8 +11,8 @@ namespace AuthService.DataAccess
 
         public InsuranceAgentsInMemoryDb()
         {
-            Add(new InsuranceAgent("jimmy.solid", "secret", "static/avatars/jimmy_solid.png", new List<string>() {"TRI", "HSI", "FAI", "CAR"}));
-            Add(new InsuranceAgent("danny.solid", "secret", "static/avatars/danny.solid.png", new List<string>() {"TRI", "HSI", "FAI", "CAR"}));
+            Add(new InsuranceAgent("dusan.jovanovic", "secret", "static/avatars/jimmy_solid.png", new List<string>() {"TRI", "HSI", "FAI", "CAR"}));
+            Add(new InsuranceAgent("stefan.mitic", "secret", "static/avatars/danny.solid.png", new List<string>() {"TRI", "HSI", "FAI", "CAR"}));
             Add(new InsuranceAgent("admin", "admin", "static/avatars/admin.png", new List<string>() {"TRI", "HSI", "FAI", "CAR"}));
         }
         

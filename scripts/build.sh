@@ -1,4 +1,4 @@
-﻿dotnet build ../ProductService.Api
+dotnet build ../ProductService.Api
 dotnet build ../PricingService.Api
 dotnet build ../PolicyService.Api
 dotnet build ../PaymentService.Api

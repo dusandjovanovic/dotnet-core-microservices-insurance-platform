@@ -1,1 +1,1 @@
-﻿docker-compose -f app.yml down
+docker-compose -f app.yml down

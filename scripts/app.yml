@@ -1,16 +1,16 @@
-﻿version: '3'
+version: '3'
 
 services:
-  dotnet-gateway:
-    build:
+  dotnet-agent-portal-gateway:
+    build: 
       context: ../
       dockerfile: ApiGateway/Dockerfile
-    image: dotnet-gateway
-    container_name: dotnet-gateway
+    image: dotnet-agent-portal-gateway
+    container_name: dotnet-agent-portal-gateway
     network_mode: host
 
   dotnet-auth-service:
-    build:
+    build: 
       context: ../
       dockerfile: AuthService/Dockerfile
     image: dotnet-auth-service
@@ -18,7 +18,7 @@ services:
     network_mode: host
 
   dotnet-payment-service:
-    build:
+    build: 
       context: ../
       dockerfile: PaymentService/Dockerfile
     image: dotnet-payment-service
@@ -26,7 +26,7 @@ services:
     network_mode: host
 
   dotnet-policy-search-service:
-    build:
+    build: 
       context: ../
       dockerfile: PolicySearchService/Dockerfile
     image: dotnet-policy-search-service
@@ -34,7 +34,7 @@ services:
     network_mode: host
 
   dotnet-policy-service:
-    build:
+    build: 
       context: ../
       dockerfile: PolicyService/Dockerfile
     image: dotnet-policy-service
@@ -42,7 +42,7 @@ services:
     network_mode: host
 
   dotnet-pricing-service:
-    build:
+    build: 
       context: ../
       dockerfile: PricingService/Dockerfile
     image: dotnet-pricing-service
@@ -50,7 +50,7 @@ services:
     network_mode: host
 
   dotnet-product-service:
-    build:
+    build: 
       context: ../
       dockerfile: ProductService/Dockerfile
     image: dotnet-product-service

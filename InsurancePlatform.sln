@@ -13,10 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PricingService.Api", "Prici
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthService", "AuthService\AuthService.csproj", "{D92F65B0-6771-4CEE-9234-65E6404A15C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DashboardService", "DashboardService\DashboardService.csproj", "{232F66E5-71FB-4F7B-9642-E10C0C6A2DB3}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DashboardService.Api", "DashboardService.Api\DashboardService.Api.csproj", "{50E12867-760B-450D-BBFA-93D5092AFC7A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolicyService", "PolicyService\PolicyService.csproj", "{EBA82B98-22DF-4935-8738-8FB148B53B54}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolicyService.Api", "PolicyService.Api\PolicyService.Api.csproj", "{5E7573CF-832C-4119-BDF3-E0969AF2D44F}"
@@ -57,14 +53,6 @@ Global
 		{D92F65B0-6771-4CEE-9234-65E6404A15C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D92F65B0-6771-4CEE-9234-65E6404A15C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D92F65B0-6771-4CEE-9234-65E6404A15C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{232F66E5-71FB-4F7B-9642-E10C0C6A2DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{232F66E5-71FB-4F7B-9642-E10C0C6A2DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{232F66E5-71FB-4F7B-9642-E10C0C6A2DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{232F66E5-71FB-4F7B-9642-E10C0C6A2DB3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{50E12867-760B-450D-BBFA-93D5092AFC7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50E12867-760B-450D-BBFA-93D5092AFC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50E12867-760B-450D-BBFA-93D5092AFC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50E12867-760B-450D-BBFA-93D5092AFC7A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EBA82B98-22DF-4935-8738-8FB148B53B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EBA82B98-22DF-4935-8738-8FB148B53B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBA82B98-22DF-4935-8738-8FB148B53B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
