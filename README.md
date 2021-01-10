@@ -16,7 +16,7 @@ Skripte su podeljene u dva dela.
 * [`infra.yml`](scripts/infra.yml) za podizanje neophodne infrastrukture.
 * [`app.yml`](scripts/app.yml) za podizanje kontejnera svih mikroservisa.
 
-Postoje i posbne skripte za build-ovanje i zaustavljanje.
+Postoje i posebne skripte za build-ovanje i zaustavljanje kontejnera.
 
 Za pokretanje svih mikroservisa nad infrastrkturom (Linux i macOS) bash/zsh:
 
