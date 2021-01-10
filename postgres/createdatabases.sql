@@ -1,19 +1,15 @@
-CREATE USER lab_user WITH ENCRYPTED PASSWORD 'lab_pass';
+CREATE USER nsi_user WITH ENCRYPTED PASSWORD 'nsi_pass';
 
--- payments
-CREATE DATABASE lab_netmicro_payments;
-GRANT ALL PRIVILEGES ON DATABASE lab_netmicro_payments TO lab_user;
+CREATE DATABASE nsi_payments;
+GRANT ALL PRIVILEGES ON DATABASE nsi_payments TO nsi_user;
 
---hangfire
-CREATE DATABASE lab_netmicro_jobs;
-GRANT ALL PRIVILEGES ON DATABASE lab_netmicro_jobs TO lab_user;
+CREATE DATABASE nsi_jobs;
+GRANT ALL PRIVILEGES ON DATABASE nsi_jobs TO nsi_user;
 
---policy
-CREATE DATABASE lab_netmicro_policy;
-GRANT ALL PRIVILEGES ON DATABASE lab_netmicro_policy TO lab_user;
+CREATE DATABASE nsi_policy;
+GRANT ALL PRIVILEGES ON DATABASE nsi_policy TO nsi_user;
 
---pricing
-CREATE DATABASE lab_netmicro_pricing;
-GRANT ALL PRIVILEGES ON DATABASE lab_netmicro_pricing TO lab_user;
+CREATE DATABASE nsi_pricing;
+GRANT ALL PRIVILEGES ON DATABASE nsi_pricing TO nsi_user;
 
 

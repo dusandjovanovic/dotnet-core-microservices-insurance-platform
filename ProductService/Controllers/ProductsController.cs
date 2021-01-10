@@ -21,23 +21,20 @@ namespace ProductService.Controllers
             this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        // GET api/products
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
             var result = await mediator.Send(new FindAllProductsQuery());
             return new JsonResult(result);
         }
-
-        // GET api/products/{code}
+        
         [HttpGet("{code}")]
         public async Task<ActionResult> GetByCode([FromRoute] string code)
         {
             var result = await mediator.Send(new FindProductByCodeQuery { ProductCode = code });
             return new JsonResult(result);
         }
-
-        // POST api/products
+        
         [HttpPost]
         public async Task<ActionResult> PostDraft([FromBody] CreateProductDraftCommand request)
         {
