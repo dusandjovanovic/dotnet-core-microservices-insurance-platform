@@ -11,7 +11,7 @@ Kornisk (agent) se prijavljuje na sistem i ponudjeno mu je sledeće:
 
 ## Pokretanje sa Dockerom
 
-Skripte su podeljene u dva dela.
+Skripte su podeljene u dva dela. Važno je pre svega uspostaviti i podići neophodnu infrastrukturu (PostgreSQL/Message broker) a zatim pokrenuti servise.
 
 * [`infra.yml`](scripts/infra.yml) za podizanje neophodne infrastrukture.
 * [`app.yml`](scripts/app.yml) za podizanje kontejnera svih mikroservisa.
