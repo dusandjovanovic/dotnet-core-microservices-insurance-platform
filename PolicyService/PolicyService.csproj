@@ -40,7 +40,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\PolicyService.Api\PolicyService.Api.csproj" />
-      <ProjectReference Include="..\PricingService\PricingService.csproj" />
+      <ProjectReference Include="..\PricingService.Api\PricingService.Api.csproj" />
     </ItemGroup>
 
 </Project>
